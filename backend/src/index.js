@@ -16,8 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-app.use(require('./routes/auth.todo'));
-app.use('/todo', require('./routes/todo.route'));
+app.use(require('./routes/auth.task'));
+app.use('/task', require('./routes/task.route'));
 
 
 //Starting the server

@@ -42,7 +42,7 @@ authMethods.singin = async (req, res) => {
         })
     }
     
-    const token = jwt.sign(user._id.toString(), "llavedeseguridad")
+    const token = jwt.sign(user._id.toString(), "llavedeseguridad");//jwt.sign(user._id.toString(), "llavedeseguridad") Problemas con variables del entorno y .env
     if(!token){
         return res.json({
             auth: false,
