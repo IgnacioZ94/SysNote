@@ -2138,3 +2138,4 @@ backend/node_modules/dotenv/types/index.d.ts
 backend/node_modules/dotenv/types/test.ts
 backend/node_modules/dotenv/types/tsconfig.json
 backend/node_modules/dotenv/types/tslint.json
+frontend/node_modules

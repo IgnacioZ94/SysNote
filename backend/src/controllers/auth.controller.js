@@ -42,7 +42,7 @@ authMethods.singin = async (req, res) => {
         })
     }
     
-    const token = jwt.sign(user._id.toString(), "llavedeseguridad");//jwt.sign(user._id.toString(), "llavedeseguridad") Problemas con variables del entorno y .env
+    const token = jwt.sign(user._id.toString(), process.env.REACT_APP_SECURE_KEY);//jwt.sign(user._id.toString(), process.env.SECURE_KEY) el .env tiene que estar en la carpeta raiz
     if(!token){
         return res.json({
             auth: false,
