@@ -11,23 +11,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 )
-
-//function app() {
-//    const retorned = (
-//    <Provider store={store}>
-//        <App />
-//    </Provider>
-//    );
-//    ReactDOM.render(retorned, document.getElementById('root'));
-//}
-//
-//app();
-//const retorned = () => {
-//    return (
-//        <Provider store={store}>
-//            <App />
-//        </Provider>
-//    )
-//}
-//
-//ReactDOM.render(<retorned />, document.getElementById('root'))
