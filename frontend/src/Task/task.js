@@ -1,3 +1,4 @@
+//CODIGO DE VIDEO FUNCIONA OK
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
@@ -12,12 +13,18 @@ class Task extends Component {
 const taskComponent = connect()(Task);
 
 export {taskComponent as Task}
+//CODIGO DE VIDEO FUNCIONA OK
 
-//*1*Intento de exportar el component Task como const en vez de como Class
-//export const Task = props => {
+//*2*ESTO FUNCIONA
+//import React from "react";
+//
+//function Task() {
 //    return (
-//      <div>
-//        <h1>Landing Page</h1>
-//      </div>
-//    );
-//};
+//        <h1>Dentro de Tareas</h1>
+//    )
+//}
+//
+//export default Task;
+//*2*ESTO FUNCIONA
+
+
