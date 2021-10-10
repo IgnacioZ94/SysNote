@@ -1,15 +1,20 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
-import { Router , Switch , Route , BrowserRouter} from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import history from "./_helpers/history";
 import {PrivateRoute}  from './components/PrivateRoute';
 import {Task} from './Task/task';
-
+import { Register } from './auth/register';
+import { Login } from './auth/login';
+import { Auth } from './auth/index';
+import './app.css'
 class App extends Component {
     render(){
         return (
 
             <Router history={history}>
+                <Route path='/auth' component={Auth}/>
                 <PrivateRoute exact path='/' component={Task}/>
             </Router>
 

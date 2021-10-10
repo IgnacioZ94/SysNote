@@ -26,7 +26,7 @@ import {Route , Redirect} from 'react-router-dom';
 //}
 
 //SOLUCION DEFINITIVA: RETORNAR EN CADA SALIDA DE CODIGO, NO UN RETURN GENERAL COMO ARRIBA
-export const PrivateRoute = ({ component: Component, auth = true, ...rest }) => {
+export const PrivateRoute = ({ component: Component, auth = false, ...rest }) => {
     return (
         <Route
             {...rest} 
@@ -35,7 +35,7 @@ export const PrivateRoute = ({ component: Component, auth = true, ...rest }) => 
                     return <Component {...props}/>
                 }
                 else{
-                    return <Redirect to='/login' />
+                    return <Redirect to='/auth' />
                 }
                 
                 
