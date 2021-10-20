@@ -96,4 +96,4 @@ const actionCreator = {
 }
 
 const loginComponent = connect(mapSateToProps , actionCreator)(Login);
-export { loginComponent , Login }
+export { loginComponent as Login }
