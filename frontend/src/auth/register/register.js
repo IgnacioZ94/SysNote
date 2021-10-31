@@ -24,4 +24,4 @@ class Register extends Component {
 }//<Link to='/singin'>Cancel</Link>
 
 const registerComponent = connect()(Register);
-export { registerComponent , Register }
+export { registerComponent as Register }

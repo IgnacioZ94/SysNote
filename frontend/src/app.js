@@ -10,12 +10,17 @@ import { Login } from './auth/login';
 import { Auth } from './auth/index';
 import './app.css'
 class App extends Component {
+    
+    
+    
+    
     render(){
+        const {authReducer} = this.props
         return (
 
             <Router history={history}>
                 <Route path='/auth' component={Auth}/>
-                <PrivateRoute exact path='/' component={Task}/>
+                <PrivateRoute exact path='/' component={Task} auth={authReducer.auth}/>
             </Router>
 
             //ESTO FUNCIONA LRPM cuando utilizo el PrivateRoute, no funciona
@@ -32,6 +37,11 @@ class App extends Component {
     }
 }
 
-const appComponent = connect()(App);
+function mapStateToProps(state) {
+    const {authReducer} = state;
+    return {authReducer}
+}
+
+const appComponent = connect(mapStateToProps)(App);
 
 export {appComponent as App}

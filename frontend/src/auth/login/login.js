@@ -2,11 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import {authActions} from '../../_action/auth.action';
+//import {authReducer} from '../../_reducers/auth.reducer';
+
 
 class Login extends Component {
     
+    //constructor() {
+    //    super();
+    //    this.handler = this.handler.bind(this);
+    //  }
+
     constructor(props) {
         super(props);
+
+        this.onHandleSubmit = this.onHandleSubmit.bind(this);
 
         this.state = {
             alertUsername: false,
@@ -44,6 +53,13 @@ class Login extends Component {
         }
     }
     
+
+
+    //
+    //  handler(e){
+    //    this.props.filterUser(e.target.value);
+    //  }
+
     onHandleSubmit = e => {
         e.preventDefault();
         //const propss = this.props;
@@ -54,17 +70,16 @@ class Login extends Component {
                     password: this.password.value 
                 }
 
-                //console.log(userObjet); Llega bien este objeto al log
+                //console.log(userObjet); //Llega bien este objeto al log
                 //Problema con el this.props
                 this.props.login(userObjet);
                 //intentosxD
-                //propss.authActions.login(userObjet);
+                //this.props.authActions.login(userObjet);
                 //authActions.login(userObjet);
             }
     }
 
     render() {
-
         const { authReducer } = this.props;
 
         return (
@@ -80,6 +95,7 @@ class Login extends Component {
                     </div>
                     <button className='buttonSend'>LogIn</button>
                 </form>
+                {authReducer.loginRequest && <div className='loader_content'><div className='loader'></div> Loading </div>}
             </div>
         )
     }
@@ -96,4 +112,4 @@ const actionCreator = {
 }
 
 const loginComponent = connect(mapSateToProps , actionCreator)(Login);
-export { loginComponent , Login }
+export { loginComponent as Login }

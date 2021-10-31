@@ -27,14 +27,16 @@ authMethods.singin = async (req, res) => {
     //return res.json('Hello word')
     const { username, password } = req.body;
     const user = await UserModel.findOne({username: username});
+    
     if(!user){
         res.json({
             auth: false,
-            message: "Usuario o contraseña incorrecta"
+            message: "Usuario o contraseña incorrecta" 
         })
     }
+    
     const autenticacion = user.confirmPassword(password);
-    //const autenticate = user.confirmPassword(password);
+    
     if(!autenticacion){
         res.json({
             auth: false,
